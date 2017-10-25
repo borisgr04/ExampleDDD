@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Data
 {
-    public class AlwaysCreateInitializer : DropCreateDatabaseAlways<SampleArchContext>
+    public class AlwaysCreateInitializer2 : DropCreateDatabaseAlways<SampleArchContext>
     {
         protected override void Seed(SampleArchContext context)
         {

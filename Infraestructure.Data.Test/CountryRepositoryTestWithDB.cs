@@ -19,6 +19,7 @@ namespace Infraestructure.Data.Test
         [SetUp]
         public void Initialize()
         {
+            Console.WriteLine("Inicalizando");
             databaseContext = new SampleArchContextTest();
             objRepo = new CountryRepository(databaseContext);
         }
@@ -26,6 +27,8 @@ namespace Infraestructure.Data.Test
         [Test]
         public void Country_Repository_Get_ALL()
         {
+            Console.WriteLine("Ejecutando ALL");
+            
             //Act
             var result = objRepo.GetAll().ToList();
 
@@ -41,6 +44,7 @@ namespace Infraestructure.Data.Test
         [Test]
         public void Country_Repository_Create()
         {
+            Console.WriteLine("Ejecutando NEW");
             //Arrange
             Country c = new Country() { Name = "UK" };
 
