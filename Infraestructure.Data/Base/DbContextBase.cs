@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
@@ -26,6 +27,11 @@ namespace Infraestructura.Data.Base
             : base(nameOrConnectionString)
         {
             
+        }
+        public DbContextBase(DbConnection connection)
+          : base(connection, true)
+        {
+            Configuration.LazyLoadingEnabled = false;
         }
         public Action<string> Log {
             get {
