@@ -1,39 +1,119 @@
-﻿using System;
+﻿using Application.Contracts;
+using Application.Implements;
+using Domain.Entities;
+using Infraestructure.Data;
+using Infraestructure.Data.Repositories;
+using SirccELC.Infraestructura.Data;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace WebApi.Controllers
 {
     public class CountryController : ApiController
     {
-        // GET: api/Country
-        public IEnumerable<string> Get()
+        readonly ICountryService _service;
+
+        public CountryController() {
+            SampleArchContext _db = new SampleArchContext();
+            _service = new CountryService(new UnitOfWork(_db), new CountryRepository(_db));
+        }
+
+        public CountryController(ICountryService service)
         {
-            return new string[] { "value1", "value2" };
+            this._service = service;
+        }
+
+        // GET: api/Country
+        public IEnumerable<Country> Get()
+        {
+            return _service.GetAll();
         }
 
         // GET: api/Country/5
-        public string Get(int id)
+        [ResponseType(typeof(Country))]
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            Country country = _service.Find(id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(country);
         }
 
         // POST: api/Country
-        public void Post([FromBody]string value)
+        [ResponseType(typeof(Country))]
+        public IHttpActionResult Post(Country country)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _service.Create(country);
+
+            return CreatedAtRoute("DefaultApi", new { id = country.Id }, country);
+            
         }
 
         // PUT: api/Country/5
-        public void Put(int id, [FromBody]string value)
+        [ResponseType(typeof(void))]
+        public IHttpActionResult Put(int id, [FromBody]Country country)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != country.Id)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _service.Update(country);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CountryExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         // DELETE: api/Country/5
-        public void Delete(int id)
+        [ResponseType(typeof(Country))]
+        public IHttpActionResult Delete(int id)
         {
+            Country country = _service.Find(id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            _service.Delete(country);
+
+            return Ok(country);
         }
+
+        private bool CountryExists(int id)
+        {
+            return _service.Find(id) !=null;
+        }
+        
     }
+
 }
