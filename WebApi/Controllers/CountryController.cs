@@ -30,9 +30,10 @@ namespace WebApi.Controllers
         }
 
         // GET: api/Country
-        public IEnumerable<Country> Get()
+        [ResponseType(typeof(Country))]
+        public IHttpActionResult Get()
         {
-            return _service.GetAll();
+            return Ok(_service.GetAll());
         }
 
         // GET: api/Country/5

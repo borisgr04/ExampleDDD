@@ -23,6 +23,5 @@ namespace Application.Implements
             _countryRepository = countryRepository;
         }
 
-        
     }
 }
