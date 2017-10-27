@@ -1,0 +1,37 @@
+{
+	"id": "ef336065-1a06-2ed4-9945-8c9324bdcc5e",
+	"name": "ExampleDDD",
+	"description": "Test a WebApi",
+	"order": [
+		"59027cc5-c985-959e-a7cb-2c097117c2e9"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1509117312755,
+	"owner": "2323488",
+	"public": false,
+	"requests": [
+		{
+			"id": "59027cc5-c985-959e-a7cb-2c097117c2e9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:65413/api/country",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509117677261,
+			"name": "GET Country",
+			"description": "Consultar todos los Paises",
+			"collectionId": "ef336065-1a06-2ed4-9945-8c9324bdcc5e",
+			"responses": []
+		}
+	]
+}
