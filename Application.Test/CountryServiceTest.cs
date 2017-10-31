@@ -23,6 +23,7 @@ namespace Application.Test
         [SetUp]
         public void Initialize()
         {
+            
             _mockRepository = new Mock<ICountryRepository>();
             _mockUnitWork = new Mock<IUnitOfWork>();
             _service = new CountryService(_mockUnitWork.Object, _mockRepository.Object);
