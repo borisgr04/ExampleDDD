@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Data.Test
 {
-    class SampleArchContextTest : SampleArchContext
+    class SampleArchContextTest : BancoContext
     {
         public SampleArchContextTest(): base()
         {
@@ -29,7 +29,7 @@ namespace Infraestructure.Data.Test
 
             base.OnModelCreating(modelBuilder);
         }
-        public void Seed(SampleArchContext context)
+        public void Seed(BancoContext context)
         {
             var listCountry = new List<Country>() {
              new Country() { Id = 1, Name = "US" },

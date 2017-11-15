@@ -16,7 +16,7 @@ namespace UI.Console
     {
         static void Main(string[] args)
         {
-            SampleArchContext context = new SampleArchContext();
+            BancoContext context = new BancoContext();
 
             CountryService service = new CountryService(new UnitOfWork(context), new CountryRepository(context));
 

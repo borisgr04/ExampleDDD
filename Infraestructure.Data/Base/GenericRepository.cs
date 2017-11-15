@@ -94,7 +94,7 @@ namespace SirccELC.Infraestructura.Data.Base
         }
         public virtual void Edit(T entity)
         {
-            _db.Entry(entity).State = EntityState.Modified;
+            _db.SetModified(entity);
         }
         public virtual void DeleteRange(List<T> entities)
         {

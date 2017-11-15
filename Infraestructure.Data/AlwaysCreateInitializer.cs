@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Data
 {
-    public class AlwaysCreateInitializer2 : DropCreateDatabaseAlways<SampleArchContext>
+    public class AlwaysCreateInitializer2 : DropCreateDatabaseAlways<BancoContext>
     {
-        protected override void Seed(SampleArchContext context)
+        protected override void Seed(BancoContext context)
         {
             var listCountry = new List<Country>() {
                new Country() { Id = 1, Name = "US" },

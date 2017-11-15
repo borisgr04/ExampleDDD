@@ -20,7 +20,7 @@ namespace WebApi.Controllers
         readonly ICountryService _service;
 
         public CountryController() {
-            SampleArchContext _db = new SampleArchContext();
+            BancoContext _db = new BancoContext();
             _service = new CountryService(new UnitOfWork(_db), new CountryRepository(_db));
         }
 

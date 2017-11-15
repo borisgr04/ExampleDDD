@@ -43,7 +43,11 @@
     <Compile Include="Abstracts\ICountryService.cs" />
     <Compile Include="Base\EntityService.cs" />
     <Compile Include="Base\IEntityService.cs" />
+    <Compile Include="Abstracts\IOperacionFinanciera.cs" />
     <Compile Include="Base\IService.cs" />
+    <Compile Include="Implements\RetirarService.cs" />
+    <Compile Include="Implements\TrasladarService.cs" />
+    <Compile Include="Implements\ConsignarService.cs" />
     <Compile Include="Implements\CountryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

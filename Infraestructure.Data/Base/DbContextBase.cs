@@ -18,6 +18,7 @@ namespace Infraestructura.Data.Base
         Action<string> Log { get; set; }
         DbEntityEntry Entry(object entity);
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+        void SetModified(object entity);
         int SaveChanges();
     }
     
@@ -40,6 +41,11 @@ namespace Infraestructura.Data.Base
             set {
                 this.Database.Log = value;
             }
+        }
+
+        public void SetModified(object entity)
+        {
+            Entry(entity).State = EntityState.Modified;
         }
     }
 }

@@ -55,7 +55,8 @@
     <Compile Include="Base\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CountryRepository.cs" />
-    <Compile Include="SampleArchContext.cs" />
+    <Compile Include="Repositories\CuentaBancariaRepository.cs" />
+    <Compile Include="BancoContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -42,13 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\ICountryRepository.cs" />
+    <Compile Include="Abstracts\ICuentaBancariaRepository.cs" />
     <Compile Include="Abstracts\IFormattedValidationException.cs" />
     <Compile Include="Abstracts\IGenericRepository.cs" />
     <Compile Include="Abstracts\IUnitOfWork.cs" />
     <Compile Include="Base\BaseEntity.cs" />
     <Compile Include="Base\IEntity.cs" />
+    <Compile Include="Entities\CuentaAhorro.cs" />
+    <Compile Include="Entities\CuentaBancaria.cs" />
     <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\CuentaCorriente.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\IServicioFinanciero.cs" />
+    <Compile Include="Entities\MovimientoFinanciero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
