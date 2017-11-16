@@ -1,15 +1,12 @@
-# ExampleDDD
+# Example DDD+TDD
 Arquitectura en Capas - DDD Layer
 
-PROYECTO INTRODUCTORIO A LA IMPLEMENTACIÓN DE UNA ARQUITECTURA EN CAPAS BAJO UN ESQUEMA DE DISEÑO DIRIGIDO POR PRUEBAS Y
-DISEO DIRIGIDO POR DOMINIO.
+Proyecto introductorio a la implementación de una arquitectura en capas bajo un esquema de diseño dirigido por pruebas y diseño dirigido por dominio.
+Es este proyecto se implementa: repositorio genérico, unidad de trabajo que encapsulan el Entity Framework.
+Este proyecto implementa test unitarios, test de integración. 
+Aplica Mock a repositorios y unidades de trabajo. 
+Aplica mock al entity framework.
+Se capa de presentación tiene una implementación de capa de interfaz de usuario con web api, web mvc y console.
+Test a web api con postman y newman
 
-ES ESTE PROYECTO SE IMPLEMENTA: REPOSITORIO GENERICO, UNIDAD DE TRABAJO QUE ENCAPSULAN EL ENTITY FRAMEWORK.
-
-ESTE PROYECTO IMPLEMENTA TEST UNITARIOS, TEST DE INTEGRACIÓN. APLICA MOCK A  REPOSITORIOS Y UNIDADES DE TRABAJO. APLICA MOCK AL ENTITY 
-FRAMEWORK.
-
-TEST A WEB API CON POSTMAN Y NEWMAN
-
-SE CAPA DE PRESENTACIÓN TIENE UNA IMPLEMENTACIÓN DE CAPA DE INTERFAZ DE USUARIO CON WEB API, WEB MVC Y CONSOLE.
 
