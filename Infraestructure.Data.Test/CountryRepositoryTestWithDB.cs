@@ -13,14 +13,14 @@ namespace Infraestructure.Data.Test
     [TestFixture]
     public class CountryRepositoryTestWithDB
     {
-        SampleArchContextTest databaseContext;
+        BancoContextTest databaseContext;
         CountryRepository objRepo;
 
         [SetUp]
         public void Initialize()
         {
             Console.WriteLine("Inicalizando");
-            databaseContext = new SampleArchContextTest();
+            databaseContext = new BancoContextTest();
             objRepo = new CountryRepository(databaseContext);
         }
 

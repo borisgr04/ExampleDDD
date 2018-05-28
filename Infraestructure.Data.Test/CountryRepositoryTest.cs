@@ -15,14 +15,14 @@ namespace Infraestructure.Data.Test
     public class CountryRepositoryTest
     {
         DbConnection connection;
-        SampleArchContextTest databaseContext;
+        BancoContextTest databaseContext;
         CountryRepository objRepo;
 
         [SetUp]
         public void Initialize()
         {
             connection = Effort.DbConnectionFactory.CreateTransient();
-            databaseContext = new SampleArchContextTest(connection);
+            databaseContext = new BancoContextTest(connection);
             objRepo = new CountryRepository(databaseContext);
         }
 

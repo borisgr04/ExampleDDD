@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Data.Test
 {
-    class SampleArchContextTest : BancoContext
+    class BancoContextTest : BancoContext
     {
-        public SampleArchContextTest(): base()
+        public BancoContextTest(): base()
         {
 
         }
-        public SampleArchContextTest(DbConnection connection)
+        public BancoContextTest(DbConnection connection)
           : base(connection)
         {
             Log = Console.WriteLine;
@@ -24,7 +24,7 @@ namespace Infraestructure.Data.Test
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Suppress code first model migration check          
-            Database.SetInitializer<SampleArchContextTest>(new AlwaysCreateInitializer());
+            Database.SetInitializer<BancoContextTest>(new AlwaysCreateInitializer());
 
 
             base.OnModelCreating(modelBuilder);
@@ -40,27 +40,27 @@ namespace Infraestructure.Data.Test
             context.SaveChanges();
         }
 
-        public class DropCreateIfChangeInitializer : DropCreateDatabaseIfModelChanges<SampleArchContextTest>
+        public class DropCreateIfChangeInitializer : DropCreateDatabaseIfModelChanges<BancoContextTest>
         {
-            protected override void Seed(SampleArchContextTest context)
+            protected override void Seed(BancoContextTest context)
             {
                 context.Seed(context);
                 base.Seed(context);
             }
         }
 
-        public class CreateInitializer : CreateDatabaseIfNotExists<SampleArchContextTest>
+        public class CreateInitializer : CreateDatabaseIfNotExists<BancoContextTest>
         {
-            protected override void Seed(SampleArchContextTest context)
+            protected override void Seed(BancoContextTest context)
             {
                 context.Seed(context);
                 base.Seed(context);
             }
         }
 
-        public class AlwaysCreateInitializer : DropCreateDatabaseAlways<SampleArchContextTest>
+        public class AlwaysCreateInitializer : DropCreateDatabaseAlways<BancoContextTest>
         {
-            protected override void Seed(SampleArchContextTest context)
+            protected override void Seed(BancoContextTest context)
             {
                 context.Seed(context);
                 base.Seed(context);

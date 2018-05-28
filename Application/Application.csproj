@@ -45,6 +45,7 @@
     <Compile Include="Base\IEntityService.cs" />
     <Compile Include="Abstracts\IOperacionFinanciera.cs" />
     <Compile Include="Base\IService.cs" />
+    <Compile Include="Implements\CuentaBancariaService.cs" />
     <Compile Include="Implements\RetirarService.cs" />
     <Compile Include="Implements\TrasladarService.cs" />
     <Compile Include="Implements\ConsignarService.cs" />

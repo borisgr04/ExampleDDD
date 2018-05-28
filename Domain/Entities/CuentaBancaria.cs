@@ -27,6 +27,7 @@ namespace Domain.Entities
             movimiento.FechaMovimiento = DateTime.Now;
             Saldo += valor;
             Movimientos.Add(movimiento);
+            
         }
         public abstract  void Retirar(double valor);
 
